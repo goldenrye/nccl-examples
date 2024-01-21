@@ -30,9 +30,9 @@ int main(int argc, char *argv[]) {
     ncclComm_t comms[4];
 
     // managing 4 devices
-    int nDev = 4;
+    int nDev = 2;
     int size = 32 * 1024 * 1024;
-    int devs[4] = {0, 1, 2, 3};
+    int devs[2] = {0, 1};
 
     // allocating and initializing device buffers
     float **sendbuff = (float **) malloc(nDev * sizeof(float *));
