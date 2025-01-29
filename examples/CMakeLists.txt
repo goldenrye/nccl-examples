@@ -2,7 +2,7 @@ file(GLOB_RECURSE SOURCES "*.cu" "*.cpp" "*.c" "*.h" "*.cxx")
 foreach (source ${SOURCES})
     get_filename_component(name ${source} NAME_WE)
     cuda_add_executable(${name} ${source})
-    target_link_libraries(${name} /usr/lib/x86_64-linux-gnu/libcudart.so
+    target_link_libraries(${name} ${CUDA_CUDART_LIBRARY}
             ${MPI_LIBRARIES})
     target_link_libraries(${name} ${NCCL_LIBRARY})
 endforeach (source)
